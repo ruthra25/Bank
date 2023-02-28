@@ -6,7 +6,7 @@ const app = express()
 const port = 3000
 const supabase = createClient(
     'https://uaglvscrowjustjizqsm.supabase.co',
-'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhZ2x2c2Nyb3dqdXN0aml6cXNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzc1NjU2MjYsImV4cCI6MTk5MzE0MTYyNn0.1eDFeniagVVlXC7Mcg9TiIIx7n6qg9eew3UQldRyskE'
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVhZ2x2c2Nyb3dqdXN0aml6cXNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzc1NjU2MjYsImV4cCI6MTk5MzE0MTYyNn0.1eDFeniagVVlXC7Mcg9TiIIx7n6qg9eew3UQldRyskE'
 );
 app.use(bodyparse.json())
 app.use(
@@ -22,7 +22,7 @@ app.use(
 
  export default async function branch(req, res) {
     const {data , error} = await supabase
-    .from('Bank')
+    .from('bankdetail')
     .select()
     .ilike('branch',`${req.query.q}`)    
     .order('ifsc',{ascending:false})
